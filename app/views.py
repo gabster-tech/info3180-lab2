@@ -18,12 +18,15 @@ def about():
     """Render the website's about page."""
     return render_template('about.html', name="Mary Jane")
 
+def format_date_joined(date):
+    """returns the date formatted as Month, Year"""
+    return "Joined " + date.strftime("%B, %Y")
+
 #new view function
 @app.route('/profile/')
 def profile():
     date = datetime.datetime.now() 
     return render_template('profile.html',date_joined = format_date_joined(date))
-
 
 ###
 # The functions below should be applicable to all Flask apps.
@@ -54,6 +57,3 @@ def page_not_found(error):
     return render_template('404.html'), 404
 
 
-def format_date_joined(date):
-    """returns the date formatted as Month, Year"""
-    return "Joined " + date.strftime("%B, %Y")

@@ -1,14 +1,35 @@
 {% extends "base.html" %}
 
 {% block main %}
-<img src="" alt="photo of Gabrielle Burke"/>
-<h1>Gabrielle Burke</h1>
-<p>@gabster</p>
-<p>Kingston,Jamaica</p>
-<p>{{date_joined}}</p>
-<p>Bio goes here</p>
-<div>
-    <p>number of posts, number of followers, number persons you are following</p>
+<div id="profile-container">
+    <div class="basic-info">
+        <img id="profile-pic" src="{{ url_for('static', filename='./elle.jpeg') }}" alt="photo of Gabrielle Burke"/>
+        <h2>Gabrielle Burke</h2>
+        <p>@gabster</p>
+        <p>Kingston, Jamaica</p>
+        <p>{{date_joined}}</p>
+    </div>
+    <div class="profile-info"> 
+        <p>Hi, my name is Gabrielle Burke, and I am a finalising Computer Science student at the University of the West Indies.
+            My interests include technology and its application in medicine, volunteering, doing personal charity projects, and sports.
+            I am interested in Web Development because I view it as a creative outlet for communicating information, needs, and services.
+            I also think the process can be fun.</p>
+        <section id="stats">
+            <div class="posts">
+                <p class="num">7</p>
+                <p class="cat"> Posts</p>
+            </div>
+            <div class="following">
+                <p class="num">100</p>
+                <p class="cat">Following</p>
+            </div>
+            <div class="followers">
+                <p class="num">250</p>
+                <p class="cat">Followers</p>
+            </div>
+        </section>
+        <button id="follow-btn">Follow</button>
+    </div>
 </div>
-<button>Follow</button>
+
 {% endblock %}
